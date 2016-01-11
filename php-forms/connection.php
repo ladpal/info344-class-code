@@ -3,7 +3,7 @@ function getConnection() {
 	require_once 'secret/db-credentials.php';
 	
 	try {
-		$conn = new PDO("mysql:host={$dbHost};dbname={$dbDatabase}", $dbUser. $dbPassword);
+		$conn = new PDO("mysql:host={$dbHost};dbname={$dbDatabase}", $dbUser, $dbPassword);
 		
 		return $conn;
 		
