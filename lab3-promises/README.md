@@ -25,7 +25,7 @@ exercise.
 
 Now that we have a better understanding for the promise API, we can move on to
 something a little more interesting. Let's promisify the 'http.get' function!
-This is a fairly complicated task, so let's I'll give it to you for free:
+This is a fairly complicated task, so I'll give it to you for free:
 
 ```javascript
 var http = require('http');
