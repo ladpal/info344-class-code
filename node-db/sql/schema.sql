@@ -11,3 +11,5 @@ create or replace table stories (
     votes int not null default 0,
     createdOn datetime not null default now()
 );
+
+--source sql/schema.sql
