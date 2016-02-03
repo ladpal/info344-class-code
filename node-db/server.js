@@ -1,3 +1,5 @@
+//main entry point
+
 'use strict';
 
 var express = require('express');

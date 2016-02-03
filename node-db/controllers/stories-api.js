@@ -1,3 +1,5 @@
+//this module builds a router
+
 'use strict';
 
 var express = require('express');

@@ -67,6 +67,11 @@ app.use(function(req, res, next) {
 
 app.use(express.static(__dirname + '/static/secure'));
 
+app.get('api/v1/users/me', function(req, res) {
+	//req.user is the currently authenticated user
+	res.json(req.user);
+});
+
 app.listen(80, function() {
 	console.log('server is listening...');
 });
