@@ -13,9 +13,10 @@ if (strlen($name) == 0) {
     <title>Hello <?= htmlentities($name) ?></title>
 </head>
 <body>
+
     
     <h1>Hello <?= htmlentities($name) ?>!</h1>
     
 </body>
 </html>
-<!-- to create a html page press ! + tab. ?= implies echo
+

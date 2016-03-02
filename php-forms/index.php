@@ -11,7 +11,12 @@ $appId = '2de143494c0b295cca9337e1e96b00e0';
 require_once 'connection.php';
 require_once 'models/zip-model.php';
 
-$q = $_GET['q'];
+if (isset($_GET['q'])) {
+    $q = $_GET['q'];   
+}
+else {
+    $q = '';
+}
 
 $conn = getConnection();
 
@@ -20,12 +25,16 @@ $matches = $zipModel->search($q);
 
 if (count($matches) == 1) {
     $zip = $matches[0]['zip'];
+
     //var_dump($zip);
     $url = "http://api.openweathermap.org/data/2.5/weather?zip={zipcode},us&units=imperial&appid={$appId}";
     $json = file_get_contents($url);
     $weatherData = json_decode($json);
     
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,13 +50,15 @@ if (count($matches) == 1) {
 </head>
 <body class="container">
     <?php 
-    include 'views/search-form.php';
-    
+
+    include 'views/search-form.php';   
+
     include 'views/matches.php';
     
     if (isset($weatherData)) {
         include 'views/weather.php';
     }
+
     
     ?>
     
@@ -55,6 +66,10 @@ if (count($matches) == 1) {
      <p><?= htmlentities($weatherData->main->temp) ?>&deg;F </p>
     
   
+
+    ?>
+       
+
    
 </body>
 </html>
